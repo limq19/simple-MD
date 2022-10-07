@@ -1,0 +1,22 @@
+id He
+natom 864           %number of atoms
+molar_mass 4.0026   % molar mass
+
+geo_dir geo.in
+
+model LJ
+epsilon 0.01032     % epsilon for Leonard-Jones potential
+sigma 3.405         % sigma for Leonard-Jones potential
+
+rcut 8.5            % rcut for Leonard-Jones potential
+neighbor_r 2        % extra distance for neighbor list 
+neighbor_n 250      % Maximum number of neighbor atoms
+
+nstep_out 2         % frequency of data output
+nstep_search 5      % frequency of verlet list updata
+steps 100           % simulation steps of MD
+step_length 0.01    % length of MD
+
+read_v 1            % is the speed readed in
+ensemble NVE        % ensemble of the system
+t_begin 100         % initial temperature
