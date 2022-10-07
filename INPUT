@@ -4,7 +4,7 @@ molar_mass 4.0026   % molar mass
 
 geo_dir geo.in
 
-model LJ
+model LJ            % potential model
 epsilon 0.01032     % epsilon for Leonard-Jones potential
 sigma 3.405         % sigma for Leonard-Jones potential
 
