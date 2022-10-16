@@ -1,6 +1,6 @@
-import read
-import get
-import loop
+import sources.read as read
+import sources.get as get
+import sources.loop as loop
 
 
 inputfile = 'INPUT'

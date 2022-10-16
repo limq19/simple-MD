@@ -1,5 +1,5 @@
-import get
-import write
+import sources.get as get
+import sources.write as write
 import numpy as np
 # from numba import jit
 
