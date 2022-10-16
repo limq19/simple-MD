@@ -1,6 +1,7 @@
 import read
 import get
-import write
+import loop
+
 
 inputfile = 'INPUT'
 # 读取命令文件、数据文件
@@ -8,16 +9,12 @@ cmd = read.read_cmd(inputfile)
 mole = read.read_in(cmd)
 
 # 初始化
-
-mole = get.verlet_list(cmd, mole)
+# 选择势函数
 if cmd['model'] == 'LJ':
     potential = read.defineLJ(cmd)
+# 设置初速度
+if cmd['read_v'] == '0':
+    mole = get.vbegin(int(cmd['t_begin']))
 
-[u, force] = get.u_force(mole, potential)
 
-print(u)
-write.energy(u)
-write.force(force)
-# print(mole.nlist[11])
-# print(mole.list[11])
-# write.verlet_list(mole, 12)
+loop.V_verlet(mole, cmd, potential)
